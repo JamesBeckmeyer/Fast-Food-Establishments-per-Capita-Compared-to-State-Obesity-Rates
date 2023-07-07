@@ -12,6 +12,8 @@ CREATE TABLE Obesity (
      )
 );
 
+-- Import Obesity-prevalence-by-state-2021.csv from the code folder before proceeding.
+
 CREATE TABLE FastFood (
     "State" varchar   NOT NULL,
     "All_fast_food_restaurants" float   NOT NULL,
@@ -26,6 +28,8 @@ CREATE TABLE FastFood (
     "Wendys" float   NOT NULL,
     "Dairy_Queen" float   NOT NULL
 );
+
+-- Import fastfood.csv from the code folder before proceeding.
 
 ALTER TABLE FastFood ADD CONSTRAINT "fk_FastFood_State" FOREIGN KEY("State")
 REFERENCES Obesity ("State");
