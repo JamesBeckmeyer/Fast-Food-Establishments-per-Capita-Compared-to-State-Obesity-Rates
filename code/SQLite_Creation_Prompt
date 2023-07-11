@@ -1,4 +1,3 @@
-sqlite3 Obesity_db.sqlite
 .mode csv
 .import C:/Users/scgaw/Desktop/Git_Repositories/Project_3/Project-3/code/Obesity-prevalence-by-state-2021.csv obesity
 .import C:/Users/scgaw/Desktop/Git_Repositories/Project_3/Project-3/code/fastfood.csv fastfood

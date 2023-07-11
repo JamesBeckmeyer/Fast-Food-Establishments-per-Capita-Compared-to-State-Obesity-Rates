@@ -1,0 +1,1 @@
+sqlite3 Obesity_db.sqlite ".read SQLite_Creation_Prompt"
