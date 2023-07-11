@@ -5,3 +5,4 @@ Slides: https://docs.google.com/presentation/d/1HEuZplCfvLfpsEWb25kR2qYXHTQjFffE
 ERD: https://app.quickdatabasediagrams.com/#/d/2qBujY
 
 When setting up the SQL Database in pgAdmin, please follow the order of table creations and imports as presented in the comments in QuickDBD-ERD.sql file. If done in an incorrect order, pgAdmin may throw an error.
+To set up SQLite Database file run SQLite_Batch_File.bat file in powershell.
