@@ -9,3 +9,7 @@ Created the obesity_db with Obesity_db.sqlite
 
 When setting up the SQL Database in pgAdmin, please follow the order of table creations and imports as presented in the comments in QuickDBD-ERD.sql file. If done in an incorrect order, pgAdmin may throw an error.
 To set up SQLite Database file run SQLite_Batch_File.bat file in powershell.
+
+Bat file will execute and establish database in sqlite for use later.
+
+Please pip install flask_cors to run flask app successfully.
