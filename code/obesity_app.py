@@ -2,6 +2,8 @@
 import sqlalchemy
 import pandas as pd
 import numpy as np
+import logging
+from flask_cors import CORS, cross_origin
 from flask import Flask, jsonify
 
 # Python SQL toolkit and Object Relational Mapper
@@ -56,7 +58,9 @@ no_florida_json = no_florida.to_json()
 #######################################################
 
 app = Flask(__name__)
-
+cors = CORS(app)
+app.config['CORS_HEADERS'] = "Content-Type"
+logging.getLogger('flask_cors').level = logging.DEBUG
 #######################################################
 # General Purpose Functions
 #######################################################

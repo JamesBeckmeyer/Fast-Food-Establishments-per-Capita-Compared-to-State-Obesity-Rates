@@ -1,5 +1,5 @@
 // Load the data from the JSON files
-let metaDataURL = "static/data/meta_data.json";
+let metaDataURL = "http://127.0.0.1:5000/v1.0/full_table";
 let mapDataURL = "static/data/fastfood_prevalence.json";
 
 Promise.all([
