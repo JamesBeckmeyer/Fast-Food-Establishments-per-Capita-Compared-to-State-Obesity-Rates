@@ -20,9 +20,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       color: "#fff",
       weight: 1,
       fillOpacity: 0.8
+    },
+    // Binding a popup to each layer
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("<strong>" + feature.properties.name + "</strong><br />obesity<br /> " +
+        feature.properties.obesity );
     }
   });
-  
+
+    
   var layer2 = L.choropleth(data, {
     valueProperty: 'fast_food',
     scale: ["#e0f3f8", "#084081"], 
@@ -33,8 +39,17 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       color: "#fff",
       weight: 1,
       fillOpacity: 0.8
+    },
+    // Binding a popup to each layer
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("<strong>" + feature.properties.name + "</strong><br />fast food establishments per capita<br /> " +
+        feature.properties.fast_food );
     }
   });
+
+  // Set up the legend.
+
+
   //base map
   let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -66,9 +81,11 @@ Promise.all([
   console.log(metaData);
   console.log(mapData);
 
-  let fastfoodrate = Object.values(mapData["All fast food restaurants"])
+let fastfoodrate = Object.values(mapData["All fast food restaurants"])
 let state = Object.values(mapData.State)
 let obesity = Object.values(mapData.Prevalence)
+
+//bar chart
 var trace1 = {
   x: state,
   y: fastfoodrate,
@@ -86,5 +103,10 @@ var trace2 = {
 var data = [trace1,trace2];
 
 Plotly.newPlot('bar', data);
+
+//plotly test
+
+//
+
 });
 
