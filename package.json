@@ -1,0 +1,22 @@
+{
+  "name": "fast-food-establishments-per-capita-compared-to-state-obesity-rates",
+  "version": "1.0.0",
+  "description": "project 3",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesBeckmeyer/Fast-Food-Establishments-per-Capita-Compared-to-State-Obesity-Rates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesBeckmeyer/Fast-Food-Establishments-per-Capita-Compared-to-State-Obesity-Rates/issues"
+  },
+  "homepage": "https://github.com/JamesBeckmeyer/Fast-Food-Establishments-per-Capita-Compared-to-State-Obesity-Rates#readme",
+  "dependencies": {
+    "@stdlib/stats-pcorrtest": "^0.0.7"
+  }
+}
