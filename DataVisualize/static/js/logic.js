@@ -1,4 +1,64 @@
-let geoDataURL = "static/data/us-states-obesity.geojson";
+// Load the data from the JSON files
+let metaDataURL = "http://127.0.0.1:5000/api/v1.0/metadata";
+let ffobDataURL = "http://127.0.0.1:5000/api/v1.0/aff_ob";
+
+Promise.all([
+  d3.json(metaDataURL),
+  d3.json(ffobDataURL),
+]).then(function([metaData, chartData]) {
+  // Log the data to the console
+  console.log(metaData);
+  console.log(chartData);
+
+let state = chartData.map(item=>item.State)
+let fastfoodrate = chartData.map(item=>item["All fast food restaurants"])
+let obesity = chartData.map(item=>item.Prevalence)
+
+
+//bar chart
+var trace1 = {
+  x: state,
+  y: fastfoodrate,
+  type: 'bar',
+  name:"fast food establishments per capita"
+};
+
+var trace2 = {
+  x: state,
+  y: obesity,
+  type: 'scatter',
+  name:"obesity rates"
+};
+
+var data = [trace1,trace2];
+
+Plotly.newPlot('bar', data);
+
+//plotly test
+var trace3 = {
+  x: fastfoodrate,
+  y: obesity,
+  mode: 'markers+text',
+  type: 'scatter',
+  textfont: {
+    family:  'Raleway, sans-serif'
+  },
+  marker: { size: 12 }
+};
+var layout = {
+  title:'fast food establishments per capita vs obesity ',
+  xaxis: {range: [ 60,  100],
+    title: 'fast food establishments per capita'},
+  yaxis: {range: [ 0,  60],title: 'obesity rates'}
+};
+var data3=[trace3]
+
+Plotly.newPlot('plot', data3, layout);
+//
+
+});
+
+let geoDataURL = "http://127.0.0.1:5000/api/v1.0/geojson";
 d3.json(geoDataURL).then(function(data){
   console.log(data);
 
@@ -23,12 +83,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     },
     // Binding a popup to each layer
     onEachFeature: function(feature, layer) {
-      layer.bindPopup("<strong>" + feature.properties.name + "</strong><br />obesity<br /> " +
-        feature.properties.obesity );
+    layer.bindPopup("<strong>" + feature.properties.name + "</strong><br />obesity<br /> " +
+      feature.properties.obesity );
     }
   });
-
-    
+  
   var layer2 = L.choropleth(data, {
     valueProperty: 'fast_food',
     scale: ["#e0f3f8", "#084081"], 
@@ -46,10 +105,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         feature.properties.fast_food );
     }
   });
-
-  // Set up the legend.
-
-
   //base map
   let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -67,46 +122,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   L.control.layers(baseMaps,overlayMaps, {
     collapsed: false
   }).addTo(myMap);
-});
-
-// Load the data from the JSON files
-let metaDataURL = "static/data/meta_data.json";
-let mapDataURL = "static/data/fastfood_prevalence.json";
-
-Promise.all([
-  d3.json(metaDataURL),
-  d3.json(mapDataURL)
-]).then(function([metaData, mapData]) {
-  // Log the data to the console
-  console.log(metaData);
-  console.log(mapData);
-
-let fastfoodrate = Object.values(mapData["All fast food restaurants"])
-let state = Object.values(mapData.State)
-let obesity = Object.values(mapData.Prevalence)
-
-//bar chart
-var trace1 = {
-  x: state,
-  y: fastfoodrate,
-  type: 'bar',
-  name:"fast food establishments per capita"
-};
-
-var trace2 = {
-  x: state,
-  y: obesity,
-  type: 'scatter',
-  name:"obesity rates"
-};
-
-var data = [trace1,trace2];
-
-Plotly.newPlot('bar', data);
-
-//plotly test
-
-//
-
 });
 
