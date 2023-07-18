@@ -1,22 +1,50 @@
-# Project-3
+## Fast Food and Obesity: A Geospatial Analysis
+This project investigates the relationship between the number of fast food establishments per capita and obesity rates across different U.S. states. The primary datasets for the fast food locations per capita per state come from NiceRx and the Centers for Disease Control and Prevention (CDC).  
 
-Proposal: https://docs.google.com/document/d/1S7qYATV4bDSzBYI82jwjbzQ5Hfmy2Rdoo8mNEouOBLA/edit
-Slides: https://docs.google.com/presentation/d/1HEuZplCfvLfpsEWb25kR2qYXHTQjFffEmAMuv54MgEI/edit#slide=id.gc6f73a04f_0_0
-ERD: https://app.quickdatabasediagrams.com/#/d/2qBujY
+The project includes data extraction, transformation, and loading (ETL), building a RESTful API, and data visualization through an interactive dashboard with a choropleth map, various charts, and the results of a T-test.  
 
-Used scrape_nicerx.ipynb to obtain the fastfood_df
-Created the obesity_db with Obesity_db.sqlite
+## Project Structure
+ETL: Data is gathered from the NiceRx and CDC websites and stored in a PostgreSQL database.  
+API: The data is cleaned and processed. Geo-json data is fetched and a API is built using Flask.  
+Data Visualization: The API is used to retrieve the processed data and an interactive HTML page is created. The page includes a map, various charts, and the results of a T-test using the Simple-statistics library.  
 
-When setting up the SQL Database in pgAdmin, please follow the order of table creations and imports as presented in the comments in QuickDBD-ERD.sql file. If done in an incorrect order, pgAdmin may throw an error.
-To set up SQLite Database file run SQLite_Batch_File.bat file in powershell.
+## Tech Stacks
+Python: Used for building the ETL pipeline.
+BeautifulSoup: Used for data extraction from the web.
+Pandas: Used for data analysis and manipulation.
+PostgreSQL: An open-source relational database used for data storage.
+Flask: A web framework used to build the API.
+JavaScript: Powers the interactivity of the dashboard.
+Plotly.js: A library for creating interactive charts and graphs.
+D3.js: A library that helps with data manipulation and visualization.
+Leaflet.js: A library for building interactive maps.
+Simple-statistics: Provides a wide range of statistical functions, including t-tests.
+HTML/CSS: Used to structure and style the website.
+## Data Sources  
+CDC Obesity Data  
+NiceRx Fast Food Data  
+## Getting Started
+### Clone the repository.  
+### ETL:  
+ 1  under the folder:\code  
+    run: scrape_nicerx.ipynb
+    to get the fastfood.csv file   
+ 2  under the folder: \code  
+    run : Create_SQLite_database.py   
+    to get the fastfood_obesity.sqlite file  
+ 3  in PostgreSQL: import \code\QuickDBD-ERD.sql
+    to build the database  
+    import fastfood.csv and obesity.csv under \data   
+### API set:
+ 1 at anaconda powershell  
+ install the Flask-CORS extension using pip: pip install -U flask-cors  
+ cd to \2API\code : python obesity_app.py    
+ 2 at web browser   
+ open the address http://127.0.0.1:5000   
+ ### webpage:
+Open the index.html file(under \3DataVisualize) in a web browser      
 
-Bat file will execute and establish database in sqlite for use later.
-
-Please pip install flask_cors to run flask app successfully.
-
-
-Running stdlib for Correlation Test:
-====================================
+## Running stdlib for Correlation Test:
 
 The 'pcorrtest' function is used to calculate the correlation between the obesityPrevalence and fastFoodCount data sets.
 
@@ -29,8 +57,10 @@ Also install 'browserify', a tool used for bundling JavaScript files, especially
 
 The browserify tool will process the correlationTest.js file along with its dependencies, and create a bundled JavaScript file (correlationTest2.js) that can be used in a web browser or another environment. The resulting file will contain all the necessary code from the input file and its dependencies, making it easier to distribute and run the JavaScript code in a self-contained manner.
 
-
 Further information on the stdlib JavaScript library could be found at -  https://github.com/stdlib-js/stats-pcorrtest/blob/main/lib/main.js
 
 and https://github.com/stdlib-js/stdlib/blob/develop/README.md#installation
 
+Proposal: https://docs.google.com/document/d/1S7qYATV4bDSzBYI82jwjbzQ5Hfmy2Rdoo8mNEouOBLA/edit
+Slides: https://docs.google.com/presentation/d/1HEuZplCfvLfpsEWb25kR2qYXHTQjFffEmAMuv54MgEI/edit#slide=id.gc6f73a04f_0_0
+ERD: https://app.quickdatabasediagrams.com/#/d/2qBujY
