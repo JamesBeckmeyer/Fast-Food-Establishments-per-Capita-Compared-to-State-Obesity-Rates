@@ -26,19 +26,19 @@ NiceRx Fast Food Data
 ## Getting Started
 ### Clone the repository.  
 ### ETL:  
- 1  under the folder:\code  
+ 1  under the folder:Database and ETL\code  
     run: scrape_nicerx.ipynb
     to get the fastfood.csv file   
- 2  under the folder: \code  
+ 2  under the folder: Database and ETL\code  
     run : Create_SQLite_database.py   
     to get the fastfood_obesity.sqlite file  
- 3  in PostgreSQL: import \code\QuickDBD-ERD.sql
+ 3  in PostgreSQL: import Database and ETL\code\QuickDBD-ERD.sql
     to build the database  
     import fastfood.csv and obesity.csv under \data   
 ### API set:
  1 at anaconda powershell  
  install the Flask-CORS extension using pip: pip install -U flask-cors  
- cd to \2API\code : python obesity_app.py    
+ cd to Database and ETL\code : python obesity_app.py    
  2 at web browser   
  open the address http://127.0.0.1:5000   
  ### webpage:
