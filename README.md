@@ -42,10 +42,8 @@ https://www.nicerx.com/fast-food-capitals/
  install the Flask-CORS extension using pip: pip install -U flask-cors  
  cd to Database and ETL\code : python obesity_app.py    
  2 at web browser   
- open the address http://127.0.0.1:5000   
- ### webpage:
-Open the index.html file(under \DataVisualize) in a web browser      
-
+ open the address http://127.0.0.1:5000        
+ 
 ### Running stdlib for Correlation Test:
 
 The 'pcorrtest' function is used to calculate the correlation between the obesityPrevalence and fastFoodCount data sets.
@@ -62,6 +60,9 @@ The browserify tool will process the correlationTest.js file along with its depe
 Further information on the stdlib JavaScript library could be found at -  https://github.com/stdlib-js/stats-pcorrtest/blob/main/lib/main.js
 
 and https://github.com/stdlib-js/stdlib/blob/develop/README.md#installation
+
+### webpage:
+Open the index.html file(under \DataVisualize) in a web browser 
 
 Proposal: https://docs.google.com/document/d/1S7qYATV4bDSzBYI82jwjbzQ5Hfmy2Rdoo8mNEouOBLA/edit
 Slides: https://docs.google.com/presentation/d/1HEuZplCfvLfpsEWb25kR2qYXHTQjFffEmAMuv54MgEI/edit#slide=id.gc6f73a04f_0_0
