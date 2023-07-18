@@ -18,7 +18,9 @@ let correlationResult = pcorrtest(obesityPrevalence, fastFoodCount);
 console.log('Correlation Result:');
 console.log('Correlation Coefficient:', correlationResult.correlation);
 console.log('p-value:', correlationResult.pValue);
-
+document.getElementById('correlation').textContent = 'Correlation Coefficient: ' + correlationResult.correlation;
+document.getElementById('pvalue').textContent = 'p-value: ' + correlationResult.pValue;
+  
 
 
 
