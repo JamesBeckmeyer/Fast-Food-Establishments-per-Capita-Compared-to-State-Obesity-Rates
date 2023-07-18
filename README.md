@@ -22,14 +22,14 @@ stdlib: Provides a wide range of statistical functions.
 HTML/CSS: Used to structure and style the website.  
 ## Data Sources  
 CDC Obesity Data  
-https://www.cdc.gov/obesity/data/prevalence-maps.html
+https://www.cdc.gov/obesity/data/prevalence-maps.html  
 NiceRx Fast Food Data  
 https://www.nicerx.com/fast-food-capitals/
 ## Getting Started
 ### Clone the repository.  
-### ETL:  
+### ETL(can be skipped):  
  1  under the folder:Database and ETL\code  
-    run: scrape_nicerx.ipynb
+    run: scrape_nicerx.ipynb  
     to get the fastfood.csv file   
  2  under the folder: Database and ETL\code  
     run : Create_SQLite_database.py   
