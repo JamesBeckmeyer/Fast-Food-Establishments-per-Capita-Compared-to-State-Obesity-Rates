@@ -44,7 +44,7 @@ NiceRx Fast Food Data
  ### webpage:
 Open the index.html file(under \3DataVisualize) in a web browser      
 
-## Running stdlib for Correlation Test:
+### Running stdlib for Correlation Test:
 
 The 'pcorrtest' function is used to calculate the correlation between the obesityPrevalence and fastFoodCount data sets.
 
