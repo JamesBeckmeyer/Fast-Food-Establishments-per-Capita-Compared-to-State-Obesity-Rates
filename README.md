@@ -1,12 +1,12 @@
 ## Fast Food and Obesity: A Geospatial Analysis
 This project investigates the relationship between the number of fast food establishments per capita and obesity rates across different U.S. states. The primary datasets for the fast food locations per capita per state come from NiceRx and the Centers for Disease Control and Prevention (CDC).  
 
-The project includes data extraction, transformation, and loading (ETL), building a RESTful API, and data visualization through an interactive dashboard with a choropleth map, various charts, and the results of a T-test.  
+The project includes data extraction, transformation, and loading (ETL), building a RESTful API, and data visualization through an interactive dashboard with a choropleth map, various charts, and the results of a Correlation Test.  
 
 ## Project Structure
 ETL: Data is gathered from the NiceRx and CDC websites and stored in a PostgreSQL database.  
 API: The data is cleaned and processed. Geo-json data is fetched and a API is built using Flask.  
-Data Visualization: The API is used to retrieve the processed data and an interactive HTML page is created. The page includes a map, various charts, and the results of a T-test using the Simple-statistics library.  
+Data Visualization: The API is used to retrieve the processed data and an interactive HTML page is created. The page includes a map, various charts, and the results of a Correlation Test using the stdlib library.  
 
 ## Tech Stacks
 Python: Used for building the ETL pipeline.
@@ -18,11 +18,13 @@ JavaScript: Powers the interactivity of the dashboard.
 Plotly.js: A library for creating interactive charts and graphs.
 D3.js: A library that helps with data manipulation and visualization.
 Leaflet.js: A library for building interactive maps.
-Simple-statistics: Provides a wide range of statistical functions, including t-tests.
+stdlib: Provides a wide range of statistical functions.
 HTML/CSS: Used to structure and style the website.
 ## Data Sources  
 CDC Obesity Data  
+https://www.cdc.gov/obesity/data/prevalence-maps.html
 NiceRx Fast Food Data  
+https://www.nicerx.com/fast-food-capitals/
 ## Getting Started
 ### Clone the repository.  
 ### ETL:  
@@ -42,7 +44,7 @@ NiceRx Fast Food Data
  2 at web browser   
  open the address http://127.0.0.1:5000   
  ### webpage:
-Open the index.html file(under \3DataVisualize) in a web browser      
+Open the index.html file(under \DataVisualize) in a web browser      
 
 ### Running stdlib for Correlation Test:
 
