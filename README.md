@@ -30,7 +30,7 @@ https://www.nicerx.com/fast-food-capitals/
 ### ETL:  
  1  at jupyter notebook:  
     run: "Database and ETL"\code\scrape_nicerx.ipynb   
-    to write data in the "Database and ETL"\data\fastfood.csv file   
+    to write data in the "Database and ETL"\data\fastfood.csv
  2  at anaconda powershell:    
     cd to the folder: "Database and ETL"\code  
     run :python Create_SQLite_database.py    
