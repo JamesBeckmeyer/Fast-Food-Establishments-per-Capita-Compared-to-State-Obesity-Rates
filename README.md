@@ -41,7 +41,8 @@ https://www.nicerx.com/fast-food-capitals/
 ### API set:
  1 at anaconda powershell  
  install the Flask-CORS extension using pip: pip install -U flask-cors  
- cd to Database and ETL\code : python obesity_app.py    
+ cd to Database and ETL\code   
+ run: python obesity_app.py     
  2 at web browser   
  open the address http://127.0.0.1:5000        
  
