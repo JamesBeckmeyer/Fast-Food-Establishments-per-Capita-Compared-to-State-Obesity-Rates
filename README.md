@@ -27,7 +27,7 @@ NiceRx Fast Food Data
 https://www.nicerx.com/fast-food-capitals/
 ## Getting Started
 ### Clone the repository.  
-### ETL(can be skipped):  
+### ETL:  
  1  under the folder:"Database and ETL"\code  
     run: scrape_nicerx.ipynb  
     to get the fastfood.csv file   
