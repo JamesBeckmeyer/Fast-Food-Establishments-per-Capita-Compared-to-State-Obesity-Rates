@@ -31,14 +31,17 @@ https://www.nicerx.com/fast-food-capitals/
  1  at jupyter notebook:  
     run: "Database and ETL"\code\scrape_nicerx.ipynb   
     to write data in the "Database and ETL"\data\fastfood.csv
+    
  2  at anaconda powershell:    
     cd to the folder: "Database and ETL"\code  
     run :python Create_SQLite_database.py    
     to create the fastfood_obesity.sqlite under "Database and ETL"\data
+    
  3  in PostgreSQL:   
     import "Database and ETL"\data\QuickDBD-ERD.sql    
     to build the database  
-    import "Database and ETL"\data\fastfood.csv and "Database and ETL"\data\obesity.csv  
+    import "Database and ETL"\data\fastfood.csv and "Database and ETL"\data\obesity.csv 
+    
 ### API set:
  1 at anaconda powershell  
  install the Flask-CORS extension using pip: pip install -U flask-cors  
