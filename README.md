@@ -33,8 +33,7 @@ https://www.nicerx.com/fast-food-capitals/
     to get the fastfood.csv file   
  2  under the folder: "Database and ETL"\code  
     run : Create_SQLite_database.py    
-    to get the fastfood_obesity.sqlite file  
-    (the  fastfood_obesity.sqlite alreaday exist in "Database and ETL"\data folder, please delete it first)    
+    to get the fastfood_obesity.sqlite file    
  3  in PostgreSQL: import "Database and ETL"\data\QuickDBD-ERD.sql
     to build the database  
     import fastfood.csv and obesity.csv under \data   
