@@ -28,13 +28,14 @@ https://www.nicerx.com/fast-food-capitals/
 ## Getting Started
 ### Clone the repository.  
 ### ETL(can be skipped):  
- 1  under the folder:Database and ETL\code  
+ 1  under the folder:"Database and ETL"\code  
     run: scrape_nicerx.ipynb  
     to get the fastfood.csv file   
- 2  under the folder: Database and ETL\code  
-    run : Create_SQLite_database.py   
+ 2  under the folder: "Database and ETL"\code  
+    run : Create_SQLite_database.py    
     to get the fastfood_obesity.sqlite file  
- 3  in PostgreSQL: import Database and ETL\code\QuickDBD-ERD.sql
+    (the  fastfood_obesity.sqlite alreaday exist in "Database and ETL"\data folder, please delete it first)    
+ 3  in PostgreSQL: import "Database and ETL"\data\QuickDBD-ERD.sql
     to build the database  
     import fastfood.csv and obesity.csv under \data   
 ### API set:
